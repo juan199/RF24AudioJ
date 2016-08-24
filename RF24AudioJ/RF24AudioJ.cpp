@@ -81,7 +81,7 @@ void RF24AudioJ::begin(){ // Set-up the radio as Rx
 
   radio.startListening();              // NEED to start listening after opening a reading pipe
   timerStart();						   // Get the timer running
-  RX();								   // Start listening for transmissions
+  TX();								   // Start listening for transmissions
 
 }
 
@@ -373,7 +373,7 @@ void RF24AudioJ::broadcast(byte radioID){
 	  //===========================================================================================================================================
 	  // Note: Apply a simple distortion effect clipping the audio signal, use the Tx as effect or transmitter + effect
 	  //===========================================================================================================================================
-	 Lee_Pot = 100; 	 // Change the value of Lee_pot between 0-127 to vary the level of the threshold,
+	 Lee_Pot = 150; 	 // Change the value of Lee_pot between 127-256 to vary the level of the threshold,
 					     // for low values of Lee_Pot it will has more distortion (but it can affect the volume because the amplitude limited)  
       VTHL = 255-Lee_Pot;
       VTHH = Lee_Pot;
